@@ -1,0 +1,23 @@
+[project]
+name = "zhepub"
+version = "0.1.0"
+description = "本地运行的 EPUB 电子书中文编辑器（参考 Sigil）"
+requires-python = ">=3.10"
+dependencies = ["PyQt6>=6.5", "lxml>=4.9"]
+
+[project.optional-dependencies]
+opencc = ["opencc-python-reimplemented>=0.1.7"]
+dev = ["pytest>=8"]
+
+[project.gui-scripts]
+zhepub = "zhepub.__main__:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["zhepub*"]
+
+[tool.ruff]
+line-length = 110
